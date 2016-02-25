@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~  Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~  WSO2 Inc. licenses this file to you under the Apache License,
+~  Version 2.0 (the "License"); you may not use this file except
+~  in compliance with the License.
+~  You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~  Unless required by applicable law or agreed to in writing,
+~  software distributed under the License is distributed on an
+~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~  KIND, either express or implied.  See the License for the
+~  specific language governing permissions and limitations
+~  under the License.
+-->
+<template name="createMerchantAccount" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="masterMerchantAccountId" description="Id of the Master Merchant Account."/>
+    <parameter name="merchantAccountId" description="Id of the Merchant Account."/>
+    <parameter name="tosAccepted" description="Accepting terms of service."/>
+    <parameter name="individualDetails" description="The individual Details Block."/>
+    <parameter name="funding" description="The funding details."/>
+    <parameter name="businessDetails" description="The business details"/>
+    <sequence>
+        <property name="uri.var.masterMerchantAccountId"
+                  expression="$func:masterMerchantAccountId"/>
+        <property name="uri.var.merchantAccountId" expression="$func:merchantAccountId"/>
+        <property name="uri.var.tosAccepted" expression="$func:tosAccepted"/>
+        <property name="uri.var.individualDetails" expression="$func:individualDetails"/>
+        <property name="uri.var.funding" expression="$func:funding"/>
+        <property name="uri.var.businessDetails" expression="$func:businessDetails"/>
+        <class name="org.wso2.carbon.connector.braintree.CreateMerchantAccount"/>
+        <script language="js">
+            <![CDATA[
+            mc.setPayloadJSON(mc.getProperty('result'));
+            ]]>
+        </script>
+    </sequence>
+
+</template>

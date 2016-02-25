@@ -1,0 +1,22 @@
+{
+  "publicKey": "%s(publicKey)",
+  "privateKey": "%s(privateKey)",
+  "merchantId": "%s(merchantId)",
+  "environment": "%s(environment)",
+  "billingCyclesRemaining": [
+    {
+      "lte":
+      %
+      s
+      (
+      billingCyclesRemainingIsLessThanOrEqualTo
+      )
+    }
+  ],
+  "inTrialPeriod":
+  %
+  s
+  (
+  searchSubscriptionsIsInTrialPeriod
+  )
+}
