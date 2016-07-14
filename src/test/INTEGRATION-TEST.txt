@@ -10,10 +10,10 @@ Pre-requisites:
 
     - Microsoft WINDOWS V-7
     - Ubuntu 14.04
-    - WSO2 ESB 4.9.0
+    - WSO2 ESB 4.9.0, 5.0.0-BETA
  
 Steps to follow in setting integration test.
- 1.  Download ESB 4.9.0 from official website.
+ 1.  Download ESB  5.0.0-BETA from official website and "-XX:-UseSplitVerifier" under $JVM_MEM_OPTS into {ESB_HOME}/bin/wso2server.sh".
  2.
 	Special Note: Created transactions can be refunded only after they are settled. Settlement of transaction is a scheduled backend process which takes around a day to be processed.
 	Due to this backend behavior, the transaction refunding functionality couldn't be incorporated successfully into the test suite. Therefore the methods,
@@ -54,7 +54,7 @@ STEPS:
 	ii) In the merchant account section copy the token related to default merchant account.
 		(default merchant account is considered as "Master Merchant Account")
 	
- 5. Compress modified ESB as wso2esb-4.9.0.zip and copy that zip file in to location "{BRAINTREE_CONNECTOR_HOME}/repository/".
+ 5. Compress modified ESB as wso2esb-5.0.0-BETA.zip and copy that zip file in to location "{BRAINTREE_CONNECTOR_HOME}/repository/".
 
  6. Update the Braintree properties file at location "{BRAINTREE_CONNECTOR_HOME}/src/test/resources/artifacts/ESB/connector/config" as below.
 	
@@ -64,7 +64,7 @@ STEPS:
 	iv)     environment - Since you created account details for sandbox, keep the environment as SANDBOX. 
 						  (Available environments are SANDBOX, DEVELOPMENT and PRODUCTION)
 						  
-	v) 		masterMerchantAccountId - Use the token you coppied in step(4) => (ii). 
+	v) 		masterMerchantAccountId - Use the token you copied in step(4) => (ii).
 	vi) 	timeDelay - Currently Braintree create transaction API expected rate is 30 seconds. Please make sure timeDelay >= 30000 (ms)
 	vii)    customFields -  Created custom fields in step(3) => (iv) is used here. API name should be key and value can be any name. 
 							Eg:- [{"apiName1":"value1"},{"apiName2":"value2"},{"apiName3":"value3"}]

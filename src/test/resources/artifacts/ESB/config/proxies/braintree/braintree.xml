@@ -143,8 +143,7 @@
                         <daysPastDue>{$ctx:daysPastDue}</daysPastDue>
                         <nextBillingDate>{$ctx:nextBillingDate}</nextBillingDate>
                         <merchantAccountId>{$ctx:merchantAccountId}</merchantAccountId>
-                        <billingCyclesRemaining>{$ctx:billingCyclesRemaining}
-                        </billingCyclesRemaining>
+                        <billingCyclesRemaining>{$ctx:billingCyclesRemaining}</billingCyclesRemaining>
                     </braintree.searchSubscriptions>
                 </case>
                 <case regex="urn:getSubscription">
@@ -189,16 +188,14 @@
                         <tosAccepted>{$ctx:tosAccepted}</tosAccepted>
                         <funding>{$ctx:funding}</funding>
                         <individualDetails>{$ctx:individualDetails}</individualDetails>
-                        <masterMerchantAccountId>{$ctx:masterMerchantAccountId}
-                        </masterMerchantAccountId>
+                        <masterMerchantAccountId>{$ctx:masterMerchantAccountId}</masterMerchantAccountId>
                         <businessDetails>{$ctx:businessDetails}</businessDetails>
                         <merchantAccountId>{$ctx:merchantAccountId}</merchantAccountId>
                     </braintree.createMerchantAccount>
                 </case>
                 <case regex="urn:updateMerchantAccount">
                     <braintree.updateMerchantAccount>
-                        <masterMerchantAccountId>{$ctx:masterMerchantAccountId}
-                        </masterMerchantAccountId>
+                        <masterMerchantAccountId>{$ctx:masterMerchantAccountId}</masterMerchantAccountId>
                         <merchantAccountId>{$ctx:merchantAccountId}</merchantAccountId>
                         <individualDetails>{$ctx:individualDetails}</individualDetails>
                         <funding>{$ctx:funding}</funding>
