@@ -47,10 +47,5 @@
     "submitForSettlement": "false"
   },
   "channel": "MyShoppingCartProvider",
-  "customFields":
-  %
-  s
-  (
-  customFields
-  )
+  "customFields":%s(customFields)
 }
