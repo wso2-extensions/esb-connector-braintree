@@ -20,6 +20,7 @@ package org.wso2.carbon.connector.braintree;
 
 import java.math.BigDecimal;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.synapse.MessageContext;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -129,6 +130,7 @@ public final class CreateTransaction extends AbstractBrainTreeConnector {
         String orderId = (String) msgContext.getProperty(Constants.ORDER_ID);
         String merchantAccountId = (String) msgContext.getProperty(Constants.MERCHANT_ACCOUNT_ID);
         String customFieldRequest = (String) msgContext.getProperty(Constants.CUSTOM_FIELDS);
+        String paymentMethodNonce = (String) msgContext.getProperty(Constants.PAYMENT_METHOD_NONCE);
 
         // instantiating a transactionRequest
         final TransactionRequest request = new TransactionRequest();
@@ -143,6 +145,10 @@ public final class CreateTransaction extends AbstractBrainTreeConnector {
         }
         if (merchantAccountId != null && !merchantAccountId.isEmpty()) {
             request.merchantAccountId(merchantAccountId);
+        }
+        
+        if (!StringUtils.isBlank(paymentMethodNonce)) {
+            request.paymentMethodNonce(paymentMethodNonce);
         }
 
         addCreditCardRequest(addCustomerRequest(addBillingTransactionAddress
