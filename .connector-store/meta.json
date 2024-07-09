@@ -1,0 +1,21 @@
+{
+    "name": "BrainTree",
+    "owner": "WSO2",
+    "category": "Billing and Accounting",
+    "documentationUrl": "https://docs.wso2.com/display/ESBCONNECTORS/BrainTree+Connector",
+    "description": "The BrainTree connector allows you to access the BrainTree Java SDK API through the WSO2 ESB. BrainTree is a full-stack payments platform that makes it easy to accept payments online. BrainTree is available in US, Europe, Australia as well as Canada, and merchants can accept payments in 130+ currencies. BrainTree replaces the traditional model of sourcing a payment gateway and a merchant account from different providers, and the Venmo Touch feature enables one touch payments to reduce checkout friction. ",
+    "status": "Unsupported",
+    "labels": [
+        "connector"
+    ],
+    "releases": [
+        {
+            "tagName": "v1.0.1",
+            "products": [
+                "ESB 5.0.0",
+                "ESB 4.9.0"
+            ],
+            "isHidden": false
+        }
+    ]
+}
